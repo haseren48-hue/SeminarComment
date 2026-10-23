@@ -1,0 +1,27 @@
+services:
+  app:
+    build: ..
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      PUBLIC_URL: https://${DOMAIN}
+      PRESENTER_KEY: ${PRESENTER_KEY:?Set PRESENTER_KEY}
+    expose: ["8787"]
+    mem_limit: 256m
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp"]
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN}
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+volumes:
+  caddy_data:
+  caddy_config:

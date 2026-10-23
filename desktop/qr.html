@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:">
+<title>SeminarComment 参加QR</title>
+<link rel="stylesheet" href="qr.css">
+<body>
+  <div id="tab" hidden><span class="grip" aria-hidden="true">⋮⋮</span><button id="expand" data-i18n="QRを表示">QRを表示</button></div>
+  <section id="card">
+    <header><span class="title"><span data-i18n="参加QR">参加QR </span><small data-i18n="ドラッグで移動">ドラッグで移動</small></span><button id="smaller" aria-label="QRを小さくする" data-i18n-aria-label="QRを小さくする" title="小さくする" data-i18n-title="小さくする">−</button><button id="larger" aria-label="QRを大きくする" data-i18n-aria-label="QRを大きくする" title="大きくする" data-i18n-title="大きくする">＋</button><button id="fold" aria-label="QRをタブにしまう" data-i18n-aria-label="QRをタブにしまう" title="タブにしまう" data-i18n-title="タブにしまう">▁</button><button id="hide" aria-label="QRを閉じる" data-i18n-aria-label="QRを閉じる" title="QRを閉じる" data-i18n-title="QRを閉じる">×</button></header>
+    <main><h1 id="name"></h1><div class="code-space"><img id="code" alt="参加QRコード" data-i18n-alt="参加QRコード" draggable="false"></div><strong id="room"></strong><p id="url"></p><small data-i18n="QRを読み取って、匿名でコメント">QRを読み取って、匿名でコメント</small></main>
+    <footer><span data-i18n="端をドラッグしてサイズ変更">端をドラッグしてサイズ変更 </span><span aria-hidden="true">◢</span></footer>
+  </section>
+  <script type="module" src="qr.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+seminar-config.json
+.DS_Store
+resources/
+work/
+Mac-AppleSilicon/
+Mac-AppleSilicon-Updated/
+docs/*.png
+docs/original-requirements.txt
+docs/verification.md
+docs/requirements.md
+
+.github/workflows/

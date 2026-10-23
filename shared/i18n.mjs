@@ -1,0 +1,113 @@
+export function languageFor(systemLanguage, saved){return ['ja','en'].includes(saved)?saved:String(systemLanguage).toLowerCase().startsWith('ja')?'ja':'en';}
+
+export const english={
+ '準備中…':'Getting ready…','セッション':'Session','利用方法':'Connection mode',
+ 'このPCで試す（設定不要）':'Try on this computer (no setup)',
+ 'スマホから参加（試験用）':'Join from phones (experimental)',
+ '設置済みサーバーを使う':'Use an existing server',
+ 'セッション表示名':'Session name','研究室セミナー':'Lab seminar','開始':'Start',
+ 'QRを表示':'Show QR','QRを閉じる':'Hide QR','QRを展開':'Expand QR','QRをタブにしまう':'Collapse QR to tab',
+ 'QRの位置・大きさを戻す':'Reset QR position and size',
+ 'QRカードの上部をドラッグで移動、端または＋／−でサイズ変更。タブにしまってもコメントは流れます。':'Drag the QR header to move it. Resize the edges or use + / −. Comments keep moving when collapsed.',
+ '参加ページを開く':'Open participant page','セッションを終了':'End session','オーバーレイ':'Overlay',
+ '表示先ディスプレイ':'Display','文字サイズ':'Text size','速度':'Speed','遅い':'Slow','普通':'Normal','速い':'Fast',
+ '表示領域を編集':'Edit comment area','領域編集をキャンセル':'Cancel area editing',
+ 'テストコメント':'Test comment','5秒後にテスト':'Test in 5 seconds','全コメント消去':'Clear all comments',
+ 'このウィンドウを閉じると、メニューバー／タスクトレイに収納します。':'Closing this window keeps the app running in the menu bar / system tray.',
+ '全画面の確認には「5秒後にテスト」を押してからPowerPointへ切り替えます。':'To check fullscreen, click “Test in 5 seconds”, then switch to PowerPoint.',
+ '接続設定（初回のみ）':'Server settings (first time only)','サーバーURL':'Server URL','セッション作成キー':'Presenter key',
+ '未設定':'Not set','設定済み（空欄なら変更なし）':'Configured (leave blank to keep)',
+ '運用者から受け取ったURLとキーを入力します。':'Enter the URL and presenter key supplied by the server operator.',
+ '設定を保存':'Save settings','設定・新しいセッション':'Settings / new session','コメントを表示':'Show comments',
+ 'QRコードを表示':'Show QR code','テストコメント（⌘/Ctrl+Shift+T）':'Test comment (⌘/Ctrl+Shift+T)','アプリを終了':'Quit app',
+ 'このPCのブラウザーから投稿できます。スマホ参加は「スマホから参加」を選んでください。':'Post from a browser on this computer. To use phones, choose “Join from phones”.',
+ 'Cloudflare経由の一時URLを発行します。URLを知る人が参加でき、アプリ終了で閉じます。試験用のため稼働保証はありません。':'Creates a temporary URL through Cloudflare. Anyone with the URL can join. Closing the app ends access. Experimental; no uptime guarantee.',
+ '下の接続設定でHTTPS URLと作成キーを設定してください。':'Enter the HTTPS URL and presenter key in Server settings below.',
+ '参加QR':'Join by QR','ドラッグで移動':'Drag to move','QRを小さくする':'Make QR smaller','小さくする':'Smaller',
+ 'QRを大きくする':'Make QR larger','大きくする':'Larger','タブにしまう':'Collapse to tab','参加QRコード':'Participation QR code',
+ 'QRを読み取って、匿名でコメント':'Scan to send anonymous comments','端をドラッグしてサイズ変更':'Drag an edge to resize',
+ 'ドラッグして表示領域を指定 · Escでキャンセル':'Drag to select the comment area · Esc to cancel',
+ '匿名コメント':'Anonymous comments','セミナーに参加':'Join the seminar',
+ 'そのひとことを、スクリーンへ。':'Your thoughts, on screen.',
+ '名前もログインも不要。Room Codeを入力して参加できます。':'No name or sign-in required. Enter the room code to join.',
+ '参加する':'Join','30文字で、気づきや感想を送れます。':'Share a thought in up to 30 characters.',
+ 'コメント':'Comment','この結果おもしろい 🐭':'Interesting result 🐭',
+ 'スクリーンには本文だけが表示されます':'Only your comment appears on screen',
+ '送信する':'Send','コメント本文の履歴は保存しません。':'Comment history is not saved.',
+ '送信しました':'Sent','コメント：':'Comment: ','セッション終了':'Session ended',
+ 'このセッションは終了しました。':'This session has ended.',
+ '接続を確認しています。送信は引き続き試せます。':'Checking the connection. You can still try sending comments.',
+ '通信できません。再試行してください。':'Could not connect. Please try again.',
+ '通信できません。ページを再読み込みしてください。':'Could not connect. Please reload this page.',
+ '送信結果を確認できませんでした。画面に流れていなければ再送してください。':'Could not confirm delivery. If your comment did not appear on screen, try sending it again.',
+ 'このブラウザでは絵文字の文字数を正確に数えられません。OSとブラウザを更新してください。':'This browser cannot count emoji correctly. Please update your browser and OS.',
+ 'コメントを入力してください。':'Please enter a comment.','改行や制御文字は使えません。':'Line breaks and control characters are not allowed.',
+ 'コメントは30文字以内です。':'Comments must be 30 characters or fewer.','文字データが大きすぎます。':'The text data is too large.',
+ '送信データが大きすぎます。':'The submitted data is too large.','送信形式が不正です。':'Invalid submission format.',
+ 'URLが長すぎます。':'The URL is too long.','許可されていない接続元です。':'This origin is not allowed.',
+ 'セッション作成キーを確認してください。':'Please check the presenter key.',
+ 'セッション作成が多すぎます。1分待って再試行してください。':'Too many session creation requests. Wait one minute and try again.',
+ 'サーバーのセッション数が上限です。':'The server has reached its session limit.',
+ 'セッション名を1〜100文字で入力してください。':'Enter a session name of 1–100 characters.',
+ 'Room Codeが見つからないか、セッションが終了しています。':'Room code not found, or the session has ended.',
+ 'セッション終了の権限がありません。':'You do not have permission to end this session.',
+ '見つかりません。':'Not found.','リクエストを処理できません。':'Could not process this request.',
+ 'セッション未開始':'No active session','接続中':'Connected',
+ '接続設定に公開サーバーのURLと作成キーを入力してください。':'Enter a public server URL and presenter key in Server settings.',
+ 'スマホ参加用のURLを準備しています…':'Preparing a URL for phone participation…',
+ 'スマホ接続が停止したためセッションを終了しました。再度開始してください。':'The phone connection stopped and the session ended. Please start a new session.',
+ 'コメント表示テストです 🐭':'Comment display test 🐭',
+ '設定を保存できません。端末の書き込み権限を確認してください。':'Could not save settings. Check write permissions on this computer.',
+ 'スマホ用QRは「スマホから参加」を選んでセッションを開始すると利用できます。':'Choose “Join from phones” and start a session to use the phone QR code.',
+ '操作に失敗しました。':'The action failed.',
+ '通信できません。サーバーURLとネットワークを確認してください。':'Could not connect. Check the server URL and network.',
+ 'サーバーの応答を確認できません。':'Could not read the server response.','通信に失敗しました。':'Connection failed.',
+ '接続が切れました。自動再接続中…':'Disconnected. Reconnecting automatically…',
+ '処理中です。少し待ってください。':'An operation is in progress. Please wait.',
+ '接続先変更の前にセッションを終了してください。':'End the session before changing servers.',
+ 'サーバーURLには http(s)://ホスト名 のみ指定してください。':'Use only an HTTP(S) origin, such as https://comments.example.org.',
+ 'インターネット上ではHTTPSのURLを使ってください。':'Use an HTTPS URL for internet connections.',
+ '作成キーは16〜256文字で設定してください。':'The presenter key must be 16–256 characters.',
+ '接続設定を保存しました。':'Server settings saved.','既存のセッションを終了してください。':'End the existing session first.',
+ 'セッションを終了してから接続方法を変更してください。':'End the session before changing connection mode.',
+ '接続方法が不正です。':'Invalid connection mode.','このPC内で確認できます。':'Ready to test on this computer.',
+ 'スマホから参加できる試験用接続です。開始時にURLを発行します。':'Experimental phone connection. A URL will be created when you start.',
+ '公開サーバーの接続設定を確認してください。':'Check the public server settings.',
+ 'セッションを開始してください。':'Please start a session.','QRの表示状態が不正です。':'Invalid QR display state.',
+ 'QRの大きさが不正です。':'Invalid QR size.','表示領域の編集モードではありません。':'Comment area editing is not active.',
+ '表示領域が不正です。':'Invalid comment area.','ディスプレイが見つかりません。':'Display not found.',
+ '文字サイズが不正です。':'Invalid text size.','速度が不正です。':'Invalid speed.',
+ '5秒後にテストコメントを表示します。PowerPointへ切り替えてください。':'A test comment will appear in 5 seconds. Switch to PowerPoint now.',
+ '不明な操作です。':'Unknown action.','処理完了後に終了してください。':'Wait for the operation to finish before quitting.',
+ 'このPC内で確認できます。セッション名を入れて開始してください。':'Ready to test on this computer. Enter a session name and click Start.',
+ 'スマホ参加用のURLを開始時に発行します（試験用）。':'A temporary phone participation URL will be created when you start.',
+ '公開サーバーに接続します。':'Connect to a public server.',
+ '表示処理が停止しました。再読み込みします（未表示コメントは失われます）。':'The overlay stopped. Reloading; pending comments will be lost.',
+ '許可されていません。':'Not allowed.','起動できません':'Could not start',
+ 'スマホ参加用の接続を準備できませんでした。ネットワークを確認するか「このPC内で確認」を選んでください。':'Could not prepare the phone connection. Check your network or choose “Try on this computer”.',
+ 'スマホ接続用プログラムを起動できません。配布ファイルを確認してください。':'Could not start the phone connection helper. Check the downloaded app files.',
+ 'スマホ参加用の接続が終了しました。この回線でCloudflare Tunnelを利用できるか確認してください。':'The phone connection ended. Check whether this network allows Cloudflare Tunnel.'
+};
+
+export function translate(text,language){
+  if(language!=='en'||typeof text!=='string')return text;
+  if(Object.hasOwn(english,text))return english[text];
+  const rules=[
+    [/^テストコメントを送信しました（(\d+)回）$/,n=>`Test comment sent (${n})`],
+    [/^テスト送信 (\d+)回$/,n=>`Test comments sent: ${n}`],
+    [/^コメント表示 (ON|OFF)$/,v=>`Comments ${v}`],
+    [/^有効期限 (.*)$/,v=>`Expires: ${v}`],
+    [/^登録できなかったキー：(.*)。別のアプリとの重複を確認してください。$/,v=>`Unavailable shortcuts: ${v}. Check for conflicts with other apps.`],
+    [/^ショートカット (.*) を登録できません。ほかのアプリとの重複を確認してください。$/,v=>`Could not register shortcut ${v}. Check for conflicts with other apps.`],
+    [/^(.*) セッション終了を確認できないため、再試行してください（最長12時間で失効）。$/,v=>`${translate(v,'en')} Could not confirm session termination. Try again; sessions expire within 12 hours.`],
+    [/^(.*)\+Shift\+C 表示切替 \/ (.*)\+Shift\+Q QR \/ (.*)\+Shift\+R 領域編集 \/ (.*)\+Shift\+T テスト$/,(a,b,c,d)=>`${a}+Shift+C Comments / ${b}+Shift+Q QR / ${c}+Shift+R Edit area / ${d}+Shift+T Test`]
+  ];
+  for(const [pattern,format] of rules){const match=text.match(pattern);if(match)return format(...match.slice(1));}
+  return text;
+}
+
+export function localize(root,language){
+  const document=root.ownerDocument||root;document.documentElement.lang=language;
+  for(const element of root.querySelectorAll('[data-i18n]'))element.textContent=translate(element.dataset.i18n,language);
+  for(const attribute of ['placeholder','title','aria-label','alt'])for(const element of root.querySelectorAll(`[data-i18n-${attribute}]`))element.setAttribute(attribute,translate(element.getAttribute(`data-i18n-${attribute}`),language));
+}

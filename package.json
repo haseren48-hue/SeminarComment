@@ -1,0 +1,88 @@
+{
+  "name": "seminar-comment",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Anonymous live comments over PowerPoint",
+  "main": "desktop/main.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "server": "node server/index.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build:mac": "node scripts/prepare-tunnel.mjs mac && node scripts/prepare-licenses.mjs && electron-builder --mac zip --arm64 --x64 --publish never",
+    "build:win": "node scripts/prepare-tunnel.mjs win && node scripts/prepare-licenses.mjs && electron-builder --win portable --x64 --publish never",
+    "demo": "node scripts/demo.mjs",
+    "poc": "electron . --poc",
+    "test:desktop": "electron . --self-test",
+    "smoke": "electron . --smoke",
+    "build:win:zip": "node scripts/prepare-tunnel.mjs win && node scripts/prepare-licenses.mjs && electron-builder --win zip --x64 --publish never",
+    "prepare:tunnel": "node scripts/prepare-tunnel.mjs",
+    "prepare:licenses": "node scripts/prepare-licenses.mjs"
+  },
+  "dependencies": {
+    "qrcode": "1.5.4",
+    "ws": "8.22.0"
+  },
+  "devDependencies": {
+    "electron": "44.9.3",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "jp.seminar.comment",
+    "productName": "SeminarComment",
+    "asar": true,
+    "files": [
+      "desktop/**/*",
+      "shared/**/*",
+      "package.json",
+      "server/**/*",
+      "web/**/*",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.education",
+      "target": "zip"
+    },
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "extraResources": [
+      {
+        "from": "resources/${os}-${arch}",
+        "to": "tunnel",
+        "filter": [
+          "cloudflared",
+          "cloudflared.exe",
+          "LICENSE"
+        ]
+      },
+      {
+        "from": "resources/licenses",
+        "to": "licenses",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "author": "SeminarComment contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haseren48-hue/SeminarComment.git"
+  },
+  "homepage": "https://github.com/haseren48-hue/SeminarComment",
+  "bugs": {
+    "url": "https://github.com/haseren48-hue/SeminarComment/issues"
+  }
+}
