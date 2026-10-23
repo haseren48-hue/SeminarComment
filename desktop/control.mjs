@@ -23,7 +23,7 @@ function apply(s){
 window.seminar.onState(apply);window.seminar.state().then(apply);
 $('sessionForm').onsubmit=e=>{e.preventDefault();action('start',$('name').value);};
 $('configForm').onsubmit=async e=>{e.preventDefault();const r=await action('configure',{serverUrl:$('serverUrl').value,presenterKey:$('presenterKey').value});if(r.ok)$('presenterKey').value='';};
-for(const id of ['visible','qr','edit','test','clear','end','openParticipant','testDelayed'])$(id).onclick=()=>action(id);
+for(const id of ['visible','qr','edit','test','clear','end','openParticipant'])$(id).onclick=()=>action(id);
 for(const id of ['display','fontSize','speed'])$(id).onchange=()=>action(id,id==='speed'?$(id).value:Number($(id).value));
 
 $('mode').onchange=()=>action('mode',$('mode').value);

@@ -63,13 +63,13 @@ export async function run({perform,state,overlay,qrWindow,control,breakConnectio
     await perform('edit');assert.equal(state().editing,true);await perform('region',{x:.1,y:.1,w:.8,h:.4});assert.equal(state().editing,false);await perform('fontSize',48);await perform('speed','fast');await until(()=>read(`document.querySelector('.comment')?.style.fontSize==='48px'`));results.push('edit mode exit, region, font size, speed');
     breakConnection();await until(()=>state().status.includes('再接続'));await until(()=>state().status==='接続中');await perform('clear');await post('再接続できました');await until(()=>read(`document.querySelector('.comment')?.textContent==='再接続できました'`));results.push('automatic reconnection and new live delivery');
     await perform('clear');await perform('visible');await perform('test');await until(()=>read(`document.querySelector('.comment')?.textContent==='コメント表示テストです 🐭'`));assert.equal(state().visible,true);assert.equal(state().testCount,2);results.push('test action restores visible overlay and records delivery');
-    await perform('clear');const beforeDelayed=state().testCount;await perform('testDelayed');await until(()=>state().testCount===beforeDelayed+1);await until(()=>read(`document.querySelector('.comment')?.textContent==='コメント表示テストです 🐭'`));results.push('delayed test fires after 5 seconds without a keyboard shortcut');
     await perform('end');assert.equal(state().session,null);await until(()=>read(`document.querySelectorAll('.comment').length===0`));results.push('session termination and clear');
     await perform('mode','local');await perform('start','設定不要テスト');await until(()=>state().status==='接続中');
     const local=state().session;assert.equal(state().mode,'local');assert.ok(local.joinUrl.startsWith(runtimeUrl()));
     const response=await fetch(runtimeUrl()+`/api/sessions/${local.id}/comments`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:'内蔵サーバーから届きました'})});assert.equal(response.status,200);
     await until(()=>read(`document.querySelector('.comment')?.textContent==='内蔵サーバーから届きました'`));await perform('end');results.push('bundled backend: session creation and posting with no server configuration');
     await perform('language','en');await until(()=>control.webContents.executeJavaScript(`document.querySelector('#start').textContent==='Start'`));
+    assert.equal(await control.webContents.executeJavaScript(`document.querySelector('#testDelayed')===null && document.querySelector('#mode option[value="quick"]').textContent==='Join from phones'`),true);
     await until(()=>qrRead(`document.querySelector('#fold').getAttribute('aria-label')==='Collapse QR to tab'`));
     assert.equal(JSON.parse(fs.readFileSync(settingsPath,'utf8')).language,'en');await perform('test');
     await until(()=>read(`Array.from(document.querySelectorAll('.comment')).some(n=>n.textContent==='Comment display test 🐭')`));

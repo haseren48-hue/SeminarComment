@@ -1,4 +1,4 @@
-# SeminarComment 0.3.0
+# SeminarComment 0.3.1
 
 日本語 | [English](README.en.md)
 
@@ -15,11 +15,11 @@ QRカードの移動、サイズ変更、タブへの折りたたみに対応し
 ソースコードのビルドやNode.jsのインストールは不要です。
 対応するZIPをダウンロードして展開してください。
 
-| 発表に使うPC | v0.3.0 |
+| 発表に使うPC | v0.3.1 |
 | --- | --- |
-| Mac：Apple Silicon（M1以降） | [Mac Apple Silicon版](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.0/SeminarComment-0.3.0-mac-arm64.zip) |
-| Mac：Intel | [Mac Intel版](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.0/SeminarComment-0.3.0-mac-x64.zip) |
-| Windows：x64 | [Windows版](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.0/SeminarComment-0.3.0-win-x64.zip) |
+| Mac：Apple Silicon（M1以降） | [Mac Apple Silicon版](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.1/SeminarComment-0.3.1-mac-arm64.zip) |
+| Mac：Intel | [Mac Intel版](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.1/SeminarComment-0.3.1-mac-x64.zip) |
+| Windows：x64 | [Windows版](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.1/SeminarComment-0.3.1-win-x64.zip) |
 
 [リリース一覧と検証範囲](https://github.com/haseren48-hue/SeminarComment/releases)
 
@@ -28,7 +28,7 @@ Mac Apple Siliconで確認済みで、Windows、Intel Mac、複数画面の実�
 試験用のスマホ接続にはCloudflare Quick Tunnelを使用し、接続の稼働保証はありません。
 本リポジトリでは共通のコメントサーバーを運用していません。発表者ごとにアプリを起動し、参加用QRを案内します。
 
-アプリの見出しで「0.3.0」を確認できます。
+アプリの見出しで「0.3.1」を確認できます。
 旧版が起動中の場合は、その版を終了してから開きます。
 
 ## このPCで試す
@@ -36,7 +36,7 @@ Mac Apple Siliconで確認済みで、Windows、Intel Mac、複数画面の実�
 1. アプリを開き、利用方法を「このPCで試す」のままにします。
 2. セッション名を入力して「開始」を押します。URLや作成キーの設定は不要です。
 3. 「参加ページを開く」を押し、ブラウザーからコメントを送信します。
-4. 「5秒後にテスト」を押してからPowerPointを全画面表示にします。ショートカットはMacがCommand + Shift + T、WindowsがCtrl + Shift + Tです。
+4. PowerPointを全画面表示にし、MacはCommand + Shift + T、WindowsはCtrl + Shift + Tでテストコメントを出します。
 
 「このPCで試す」の参加ページは、同じPCのブラウザーからだけアクセスできます。
 スマートフォンから試す場合は、次の接続方法へ切り替えます。
@@ -44,7 +44,7 @@ Mac Apple Siliconで確認済みで、Windows、Intel Mac、複数画面の実�
 ## スマートフォンから試す
 
 1. 使用中のセッションがあれば「セッションを終了」を押します。
-2. 利用方法を「スマホから参加（試験用）」に変更します。
+2. 利用方法を「スマホから参加」に変更します。
 3. セッション名を入力して「開始」を押します。一時的なHTTPS URLの準備を待ちます。
 4. 「QRを表示」を押し、スマートフォンで読み取ってコメントを投稿します。
 

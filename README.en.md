@@ -1,4 +1,4 @@
-# SeminarComment 0.3.0
+# SeminarComment 0.3.1
 
 [日本語](README.md) | English
 
@@ -12,9 +12,9 @@ You do not need Node.js or development tools to use the app.
 
 | Presenter computer | Download |
 | --- | --- |
-| Mac with Apple Silicon (M1 or later) | [Mac Apple Silicon ZIP](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.0/SeminarComment-0.3.0-mac-arm64.zip) |
-| Intel Mac | [Mac Intel ZIP](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.0/SeminarComment-0.3.0-mac-x64.zip) |
-| Windows x64 | [Windows ZIP](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.0/SeminarComment-0.3.0-win-x64.zip) |
+| Mac with Apple Silicon (M1 or later) | [Mac Apple Silicon ZIP](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.1/SeminarComment-0.3.1-mac-arm64.zip) |
+| Intel Mac | [Mac Intel ZIP](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.1/SeminarComment-0.3.1-mac-x64.zip) |
+| Windows x64 | [Windows ZIP](https://github.com/haseren48-hue/SeminarComment/releases/download/v0.3.1/SeminarComment-0.3.1-win-x64.zip) |
 
 [All releases](https://github.com/haseren48-hue/SeminarComment/releases)
 
@@ -24,9 +24,9 @@ Apple Silicon macOS has been tested. Intel Mac, Windows and multiple displays st
 ## Start a session
 
 1. Extract the ZIP. Open `SeminarComment.app` on Mac or `SeminarComment.exe` on Windows. On Windows, keep the entire extracted folder together.
-2. Choose **Join from phones (experimental)**, enter a session name, and click **Start**. Both the presenter computer and phones need internet access.
+2. Choose **Join from phones**, enter a session name, and click **Start**. Both the presenter computer and phones need internet access.
 3. Click **Show QR**. Participants scan it and send comments from their browsers.
-4. Select the display used for your slideshow. Click **Test in 5 seconds**, then switch to PowerPoint fullscreen to check the overlay.
+4. Select the display used for your slideshow. In PowerPoint fullscreen, use Command + Shift + T (Mac) or Ctrl + Shift + T (Windows) to send a test comment.
 
 No shared comment server is operated by this repository. Each presenter runs the app and creates their own session.
 The phone connection uses Cloudflare Quick Tunnel, an experimental connection with no uptime guarantee. URLs change when the tunnel is recreated. Ended sessions and old QR codes cannot be reused.

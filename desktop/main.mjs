@@ -179,7 +179,6 @@ async function perform(action,value){
     case 'fontSize':if(![24,36,48,60,72].includes(value))throw new Error('文字サイズが不正です。');settings.fontSize=value;writeSettings();break;
     case 'speed':if(!['slow','normal','fast'].includes(value))throw new Error('速度が不正です。');settings.speed=value;writeSettings();break;
     case 'clear':clear();break;
-    case 'testDelayed':status='5秒後にテストコメントを表示します。PowerPointへ切り替えてください。';setTimeout(()=>{if(!quitting)testComment();},5000);break;
     case 'test':testComment();break;
     default:throw new Error('不明な操作です。');
   }
@@ -205,7 +204,7 @@ app.whenReady().then(async()=>{
   if(process.env.SEMINAR_SERVER_URL){config.serverUrl=process.env.SEMINAR_SERVER_URL.replace(/\/$/,'');config.mode='external';}if(process.env.SEMINAR_PRESENTER_KEY)config.presenterKey=process.env.SEMINAR_PRESENTER_KEY;
   if(!['local','quick','external'].includes(config.mode))config.mode=config.presenterKey?'external':'local';
   if(config.mode==='local'&&config.presenterKey&&config.serverUrl&&!['http://127.0.0.1:8787',''].includes(config.serverUrl))config.mode='external';
-  status=config.mode==='local'?'このPC内で確認できます。セッション名を入れて開始してください。':config.mode==='quick'?'スマホ参加用のURLを開始時に発行します（試験用）。':'公開サーバーに接続します。';
+  status=config.mode==='local'?'このPC内で確認できます。セッション名を入れて開始してください。':config.mode==='quick'?'スマホ参加用のURLを開始時に発行します。':'公開サーバーに接続します。';
   const webPreferences={preload:path.join(dir,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true,backgroundThrottling:false};
   overlay=new BrowserWindow({...currentDisplay().bounds,transparent:true,frame:false,type:process.platform==='darwin'?'panel':'normal',hasShadow:false,alwaysOnTop:true,skipTaskbar:true,focusable:false,resizable:false,enableLargerThanScreen:true,show:false,webPreferences});
   overlay.setIgnoreMouseEvents(true);overlay.setAlwaysOnTop(true,'screen-saver');
